@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/abe804df33.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <div class="container">
+        <div class="player-container">
+            <div class="player-body">
+                <button>Paper</button>
+                <button>Rock</button>
+                <button>Scissors</button>
+                <div class="players">
+                    <div class="player-one">
+                        
+                        <i class="fas fa-user-circle fa-3x"></i>
+                        <h3>player-one</h3>
+                        <p class = "player-info">Move:<span id="player-one"></span></p>
+                        <p class = "player-info">Score:<span id ="score">0</span></p>
+                    </div>
+                    <div class="player-two">
+                        
+                        <i class="fas fa-user-circle fa-3x"></i>
+                        <h3>player two</h3>
+                        <p class = "player-info">Move:<span id="player-two"></span></p>
+                        <p class = "player-info">Score:<span id ="score-player-two">0</span></p>
+                    </div>
+                </div>
+                    <div class="score">
+                       
+                        <p class = "round-info">Winner:<span id="round-winner"></span></p>
+                        <p class = "round-info">Points:<span id="round-totals"></span></p>
+                        <p class="round-info">Score:<span id="points"></span></p>
+                        <p><span id="alert"></span></p>
+                    </div>
+                   
+        </div>
+        <div class="game">
+            <p>GAME OVER</p>
+            <p>Play another one?</p>
+            <div class="btn">
+                <button>Yes</button>
+            <button>No</button>
+            
+            </div>
+            
+        </div>
+        
+        </div>
+        
+        
+    </div>
+    
+    
+
+    <script src ="rock_paper_scissors.js"></script>
+    
+</body>
+</html>
