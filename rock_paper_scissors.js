@@ -22,10 +22,14 @@ function getRandomInt(num){
 }
 
 function startGame(){
-    // let rounds = 0
+    let rounds = 0
     let total = 0
     totals = 0
     totalss = 0
+    scores.textContent = totals
+    span.textContent = totalss
+    player_one.textContent =""
+    player_two.textContent = ""
     //let score = [0,0];
 
 
@@ -35,7 +39,7 @@ function startGame(){
         let choices = ["rock","paper","scissors"];
         let score = [0,0];
         let player_one_move = choices[getRandomInt(3)] //computer 
-        let player_two_move = button.textContent.toLowerCase()
+        let player_two_move = e.target.textContent.toLowerCase()
         player_one.textContent = player_one_move
         player_two.textContent = player_two_move
         
@@ -43,8 +47,8 @@ function startGame(){
             if ((player_one_move === "rock" && player_two_move === "scissors") ||(player_one_move === "paper" && player_two_move === "rock") || (player_one_move === "scissors" && player_two_move === "paper") ){
                score[0] = 1
                totals += score[0]
-            //    span.textContent = score[0]
-                
+            //span.textContent = score[0]
+                console.log(`player_one :${totals}`)
                 span.textContent = totals
                 
                 
@@ -53,6 +57,8 @@ function startGame(){
                 score[1] = 1
                 totalss += score[1]
                 //scores.textContent = score[1]
+                console.log(`player_two :${totalss}`)
+                
                 
                 scores.textContent = totalss
                
@@ -63,41 +69,8 @@ function startGame(){
                 span.textContent = totals
                 scores.textContent = totalss
             }
-             
-            //let choice = button.textContent
-            
-}))
-
-
-}
-
-function gameOver(){
-    btns.forEach(btn => btn.addEventListener("click",function(e){
-        if(e.target.textContent === "Yes"){
-            game.classList.add('rotate')
-            startGame()
-            
-           
-          } else {
-              player_body.classList.add('animate__animated', 'animate__fadeOut')
-              game.classList.add('animate__animated','animate__fadeOut')
-              
-
-        }
-
-    }))
-
-}
-
-         let total = 0
-         let rounds = 0
-         let totals = 0
-         let totalss = 0
-    
-   
-         buttons.forEach(button => button.addEventListener("click", function(e){
-            total ++
             if(total === 5 ){
+                
                 rounds ++
                 alert.textContent = `End of round ${rounds}`
                 player_info.style.display = "none"
@@ -117,6 +90,8 @@ function gameOver(){
                 if(totals > totalss){
                
                  round_winner.textContent = "Player one"
+                 points.textContent = [totals,totalss]
+
                 //  player_one_avatar.style.display = "block"
                  round_totals.textContent = totals
                 
@@ -131,21 +106,23 @@ function gameOver(){
                     
     
                  } else {
-                    //  round_winner.textContent = "A draw"
+                    //round_winner.style.display = "none"
+                    points.textContent = [totals,totalss]
                      player_two_avatar.style.display = "none"
                      player_one_avatar.style.display = "none"
                  }
 
                  if(rounds === 3){
                     game.classList.add("win")
-                    rounds = 0
-                    total = 0
+                    
+                    // rounds = 0
+                    // total = 0
                     // totals = 0
                     // totalss = 0
-                    score = [0,0]
+                    // score = [0,0]
 
-                    totals += score[0]
-                    totalss += score[1]
+                    // totals += score[0]
+                    // totalss += score[1]
                     console.log(`score:${score}`)
                     console.log(`totals:${totals}`)
                     console.log(`totalss:${totalss}`)
@@ -159,19 +136,61 @@ function gameOver(){
                 
                 }
 
-                 }  else {
+                 }
+                
+                else {
                        alert.textContent = ""
                        player_info.style.display = "flex"
                        round_info.style.display = "none"
                       }
+           
+
+             
+            //let choice = button.textContent
+            
+}))
+
+
+}
+
+function gameOver(){
+    btns.forEach(btn => btn.addEventListener("click",function(e){
+        if(e.target.textContent === "Yes"){
+            game.classList.add('rotate')
+            startGame()
+            console.log(`totals:${totals}`)
+           
+          } else {
+              player_body.classList.add('animate__animated', 'animate__fadeOut')
+              game.classList.add('animate__animated','animate__fadeOut')
+              
+
+        }
+
+    }))
+
+}
+
+   
+
+     
+         let total = 0
+         let rounds = 0
+         totals = 0
+         totalss = 0
+     
+   
+        buttons.forEach(button => button.addEventListener("click", function(e){
+             total ++
+           
                
         }))
+    
     
        
               
 
     
-
 
 
 startGame()
